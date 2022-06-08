@@ -1,0 +1,106 @@
+body {
+  background: url('./img/fon.jpg');
+}
+
+.container {
+  max-width: 1400px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  height: 100px;
+  background-color: #f9b234;
+}
+
+.comments-list {
+  max-width: 500px;
+  width: 100%;
+  margin: auto;
+}
+
+ol {
+  padding: 0;
+}
+
+h3, h2 {
+  color: #fff;
+  text-align: center;
+}
+
+.articles-list__item {
+  list-style: none;
+  display: flex;
+  margin-top: 0;
+
+  padding:20px;
+
+  position: relative;
+  display: block;
+  background-color: #fff;
+  border: 1px solid rgba(88, 2, 31);
+
+  margin-bottom: 20px;
+
+  border-radius: 12px;
+}
+
+button {
+  padding: 0;
+  margin: 0;
+  background: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.form-button {
+  width: 50%;
+  margin: auto;
+  padding: 10px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  color: rgba(88, 2, 31);
+  border: none;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(153, 49, 83);
+  border-radius: 5px;
+  background-color: rgb(255, 198, 212);
+}
+
+.js-delete-comment {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 40px;
+  height: 40px;
+  color: black;
+}
+
+label, button {
+  display: block;
+  width: 50%;
+  color: #fff;
+  margin: auto;
+}
+
+input {
+  width: 100%;
+}
+
+input,textarea {
+  width: 100%;
+  margin: 0 0 15px;
+  padding: 10px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  color: rgba(88, 2, 31);
+  border: none;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(153, 49, 83);
+  border-radius: 5px;
+  background-color: rgb(255, 239, 243);
+}
