@@ -1,23 +1,20 @@
 import React from "react";
-import { AUTHORIZATION_URL } from "../const";
+import { authenticationUnsplash } from "../unsplash";
 
-export const Header = () =>{
-  // const handlerBtn =() => {
-
-  // }
-     return(
-       <header className="header">
-         <div className="container">
-            <a href="#" className="logo">
-            
-            </a>
-         </div>
-         <a className="userBtn" href={AUTHORIZATION_URL}>
-         </a>
-         {/* <button className="userBtn" onClick={handlerBtn}>
-        
-         </button> */}
-       </header>
-     ) 
+export const Header = () => {
+  const handleBtn =() => {
+    authenticationUnsplash();
   }
- export default Header;
+  return (
+    <header className="header">
+      <div className="container">
+        <a href="#" className="logo">
+
+        </a>
+      </div>
+      <button className="userBtn" onClick={handleBtn}>
+      </button>
+    </header>
+  )
+}
+export default Header;
