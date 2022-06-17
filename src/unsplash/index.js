@@ -46,25 +46,3 @@ export const getPhotos = () => {
   };
   return fetchAsync();
  }
-  
-// export const likePhoto = (unsplash, image) => {
-//     if (image.liked_by_user === true) {
-//         return (
-//             unsplash.photos.unlikePhoto(image.id)
-//               .then(res => res.text())
-//               .then(res => {
-//                   if (res != "Rate Limit Exceeded" && !JSON.parse(res).errors) { return JSON.parse(res); }
-//                   else { console.error("Лимит запросов исчерпан!"); }
-//               })
-//           )
-//     } else if (image.liked_by_user === false) {
-//         return (
-//             unsplash.photos.likePhoto(image.id)
-//               .then(res => res.text())
-//               .then(res => {
-//                   if (res != "Rate Limit Exceeded" && !JSON.parse(res).errors) { return JSON.parse(res); }
-//                   else { console.error("Лимит запросов исчерпан!"); }
-//               })
-//           )
-//     }
-// }

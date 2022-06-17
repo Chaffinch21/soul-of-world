@@ -1,4 +1,3 @@
 export const PHOTO_LOAD = 'PHOTO_LOAD';
 export const LOADER_DISPLAY_ON = 'LOADER_DISPLAY_ON';
 export const LOADER_DISPLAY_OFF = 'LOADER_DISPLAY_OFF';
-export const UPDATE_TOKEN = 'UPDATE_TOKEN';
