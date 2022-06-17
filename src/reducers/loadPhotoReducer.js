@@ -1,9 +1,9 @@
 const todos = (state=[], action) => {
 
   switch(action.type) {
-    case 'ADD_PHOTO':
+    case 'LOAD_PHOTOS':
       return [
-        ...state, action.photos
+        ...state.photos, action.photos
       ]
     default:
       return state;

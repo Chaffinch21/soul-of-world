@@ -1,42 +1,51 @@
 import React from 'react';
-import setBearerToken from 'unsplash-js/lib/methods/auth';
 import Unsplash from 'unsplash-js';
+// import {setCookie, getCookie} from '../cookies';
+
+Unsplash = require('unsplash-js').default;
 
 export const unsplash = new Unsplash({
-    applicationId: 'DvahNraSvUX3Y59qexjWLHircaoLrJ_6uArWOhABpHY',
-    secret: '6v4pp6-DSsAvUfcPuoz4pNbaW11QfZV6iycqQJHgOmE',
-    callbackUrl: 'http://localhost:3000/auth'
+  accessKey: 'DvahNraSvUX3Y59qexjWLHircaoLrJ_6uArWOhABpHY',
+  secret: '6v4pp6-DSsAvUfcPuoz4pNbaW11QfZV6iycqQJHgOmE',
+  callbackUrl: 'http://localhost:3000/auth'
 
 })
 
-  export const authenticationUrl = unsplash.auth.getAuthenticationUrl([
-    "public",
-    "write_likes"
-]);
+export const authenticationUnsplash = () => {
+  const authenticationUrl = unsplash.auth.getAuthenticationUrl([
+      "public",
+      "write_likes"
+  ]);
 
-export const setAccessTokenUnplash = (code) => {
-    unsplash.auth.userAuthentication(code)
-        .then(res => res.json())
-        .then(json =>{
-          console.log(json, 'Succ')
-          unsplash.auch.setBearerToken(json.access_token);
-          localStorage.setItem('bearerToken', json.access_token);
-          // successfulAuthCallback();
-          console.log('bearerToken', 'bearerTocken-222')
-        })
-      
-};
-  
-// export const getPhotos = (unsplash, start = 1, end = 15) => {
-//     return (
-//       unsplash.photos.listPhotos(start, end, 'latest')
-//         .then(res => res.text())
-//         .then(res => {
-//             if (res != "Rate Limit Exceeded" && !JSON.parse(res).errors) { return JSON.parse(res); }
-//             else { console.error("Лимит запросов исчерпан!"); }
-//         })
-//     )
-// }
+  window.location.assign(authenticationUrl);
+}
+
+export const getToken = () => {
+  // debugger;
+unsplash.auth.userAuthentication()
+  .then(res => res.text())
+  .then(res => {
+    localStorage.setItem('tocken', window.location.search.split('code=')[1]);
+    unsplash.auth.setBearerToken(JSON.parse(res).access_token);
+    });
+}
+
+export const getPhotos = () => {
+  const fetchAsync = async () => {
+   try {
+    const response = await unsplash.photos.listPhotos(1, 3, 'latest');
+    if (response.ok && response.status >= 200 && response.status < 300) {
+     const json = await response.json();
+     console.log(json);
+     return;
+    }
+    throw new Error(response.statusText);
+   } catch (err) {
+    console.error(err);
+   }
+  };
+  return fetchAsync();
+ }
   
 // export const likePhoto = (unsplash, image) => {
 //     if (image.liked_by_user === true) {

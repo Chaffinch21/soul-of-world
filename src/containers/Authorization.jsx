@@ -1,18 +1,14 @@
 import React from 'react';
-import { setAccessTokenUnplash } from '../unsplash';
+import { getToken, getPhotos } from '../unsplash';
+import ListPhoto from './ListPhoto';
 
   const Authorization = () => {
-    const code = window.location.search.split('code=')[1];
-    console.log(code);
-  setAccessTokenUnplash(code);
+    getToken();
         return (
-            <main className="main-wrapper">
-                <header className="header">
-                    <div className="container-my">
-                        <h1> Авторизация</h1>
-                    </div>
-                </header>
-            </main>
+            
+            <div className="container">
+                <ListPhoto />
+            </div>
         )
         
     }

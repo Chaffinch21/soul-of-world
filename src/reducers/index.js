@@ -1,5 +1,6 @@
 import { combineReducers } from "redux";
-import addPhotoReducer from "./addPhotoReducer";
+import loadPhotoReducer from "./loadPhotoReducer";
+import tokenReducer from "./tokenReducer";
 export default combineReducers({
- addPhotoReducer
+ loadPhotoReducer
 });
