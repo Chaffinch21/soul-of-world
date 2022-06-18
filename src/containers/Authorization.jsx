@@ -1,12 +1,11 @@
 import React from 'react';
-import { getToken, getPhotos } from '../unsplash';
 import ListPhoto from './ListPhoto';
 
   const Authorization = () => {
-    getToken();
+    
         return (
-            
-            <div className="container">
+            <div className="container container-Gl">
+                <h1 className="title-Gl">Добро пожаловать!</h1>
                 <ListPhoto />
             </div>
         )

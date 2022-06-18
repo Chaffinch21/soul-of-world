@@ -1,15 +1,16 @@
-// import { getPhotos } from '../unsplash';
+import {unsplash} from '../unsplash';
 import {
-  PHOTO_LOAD
+  LOAD_PHOTOS
 } from './type';
 
-export const loadPhotosAction = () => {
-  // return async dispatch => {
-  //   const response = await getPhotos();
-  //   const jsonData = await response.json();
-  //   dispatch({
-  //     type: PHOTO_LOAD,
-  //     data: jsonData
-  //   })
-  // }
+export const loadPhotosAction = (start, end) => {
+  return async dispatch => {
+    const response = await unsplash.photos.listPhotos(start, end, 'latest');
+    const jsonData = await response.json();
+    dispatch({
+      type: LOAD_PHOTOS,
+      data: jsonData
+    })
+    console.log(jsonData);
+  }
 }

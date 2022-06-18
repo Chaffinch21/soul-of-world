@@ -1,5 +1,6 @@
 :root {
  --color-text: #24065d;
+ --color-yellow: #f9b234;
 }
 
 body {
@@ -53,5 +54,100 @@ body {
 
 .container-Gl {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  padding-bottom: 40px;
+}
+
+.list-container {
+  display: block;
+
+  width: 100%;
+  
+}
+
+.btn-load {
+  display: block;
+  margin: 0 auto;
+  padding: 20px 40px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-text);
+  background-color: var(--color-yellow);
+  border: 2px solid #24065d;
+  cursor: pointer;
+  transition: background-color .3s ease-in-out;
+}
+
+.btn-load:hover,
+.btn-load:active {
+  background-color: #fda000;
+}
+
+.photos-list {
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+}
+
+.photo-item {
+  display: block;
+  width: 33%;
+  user-select: none;
+}
+
+.photo-card {
+  background-color: #ffffff;
+  padding: 15px;
+  margin-bottom: 30px;
+}
+
+.photo-card:not(:nth-child(3n)) {
+  margin-right: 20px;
+}
+
+.photo-card img {
+  width: 400px;
+  height: 267px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.card-link {
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  color: var(--color-text);
+  transition: color .3s ease-in-out;
+}
+
+.card-link:hover {
+  color: var(--color-yellow);
+}
+
+.card-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-reiting {
+  padding-left: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  color: var(--color-text);
+  background-image: url('./img/like-color.png');
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 20px 20px;
+}
+
+.card-date {
+  margin: 10px 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  color: var(--color-text);
 }

@@ -1,6 +1,5 @@
 import React from 'react';
 import Unsplash from 'unsplash-js';
-// import {setCookie, getCookie} from '../cookies';
 
 Unsplash = require('unsplash-js').default;
 
@@ -21,28 +20,28 @@ export const authenticationUnsplash = () => {
 }
 
 export const getToken = () => {
-  // debugger;
-unsplash.auth.userAuthentication()
+  const code=window.location.search.split('code=')[1];
+unsplash.auth.userAuthentication(code)
   .then(res => res.text())
   .then(res => {
-    localStorage.setItem('tocken', window.location.search.split('code=')[1]);
+    localStorage.setItem('tocken', code);
     unsplash.auth.setBearerToken(JSON.parse(res).access_token);
     });
 }
 
-export const getPhotos = () => {
-  const fetchAsync = async () => {
-   try {
-    const response = await unsplash.photos.listPhotos(1, 3, 'latest');
-    if (response.ok && response.status >= 200 && response.status < 300) {
-     const json = await response.json();
-     console.log(json);
-     return;
-    }
-    throw new Error(response.statusText);
-   } catch (err) {
-    console.error(err);
-   }
-  };
-  return fetchAsync();
- }
+// export const getPhotos = () => {
+//   const fetchAsync = async () => {
+//    try {
+//     const response = await unsplash.photos.listPhotos(1, 3, 'latest');
+//     if (response.ok && response.status >= 200 && response.status < 300) {
+//      const json = await response.json();
+//      console.log(json);
+//      return;
+//     }
+//     throw new Error(response.statusText);
+//    } catch (err) {
+//     console.error(err);
+//    }
+//   };
+//   return fetchAsync();
+//  }
