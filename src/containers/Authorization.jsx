@@ -5,7 +5,7 @@ import ListPhoto from './ListPhoto';
     
         return (
             <div className="container container-Gl">
-                <h1 className="title-Gl">Добро пожаловать!</h1>
+                <h1 className="title-Gl welcome">Добро пожаловать!</h1>
                 <ListPhoto />
             </div>
         )

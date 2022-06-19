@@ -7,28 +7,21 @@ import { useDispatch, useSelector } from "react-redux";
 import {loadPhotosAction} from '../actions'
 // localStorage.setItem('start', 0);
 // localStorage.setItem('end', 5);
-let start = 0; let end = 10;
+let start = 1; 
 const ListPhoto = () => { 
   const dispatch = useDispatch();
-  // let [photos, setListPhotos] = useState('');
-  // useEffect(() => {
-  //   dispatch(loadPhotosAction());
-  // }, []);
+
+  const loadHandler =(ev)=>{
+    dispatch(loadPhotosAction(start));
+    ev.preventDefault();
+    start = start + 1;
+    document.querySelector('.welcome').classList.add('hidden');
+  }
 
   const photos = useSelector(state => {
     const {loadPhotoReducer} = state;
     return loadPhotoReducer.photos;
   })
-
-  const loadHandler =(ev)=>{
-    dispatch(loadPhotosAction(start, end));
-    ev.preventDefault();
-    start = start + 10 ; end = end + 10;
-    // dispatch(loadPhotosAction(localStorage.getItem('start'), localStorage.getItem('end')));
-    // setListPhotos(photos);
-    // localStorage.setItem('start', Number(localStorage.getItem('start'))+Number(localStorage.getItem('end')));
-    // localStorage.setItem('end', Number(localStorage.getItem('end'))+Number(localStorage.getItem('end')));
-  }
   return(
     <div className="list-container">
       <ul className="photos-list">

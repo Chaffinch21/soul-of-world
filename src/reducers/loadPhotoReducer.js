@@ -22,10 +22,9 @@ const loadPhotoReducer = (state=initialState, action) => {
           date: res.created_at
         }
       })
-      console.log(photosNew);
       return {
-        ...state, 
-          ...state, photos: photosNew
+          ...state, 
+          photos: [...state.photos, ...photosNew]
       }
     default:
       return state;

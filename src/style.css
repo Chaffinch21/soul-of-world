@@ -61,9 +61,13 @@ body {
 
 .list-container {
   display: block;
-
+  padding-top: 50px;
   width: 100%;
   
+}
+
+.welcome.hidden {
+  display: none;
 }
 
 .btn-load {
