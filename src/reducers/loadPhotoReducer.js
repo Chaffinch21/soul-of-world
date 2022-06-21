@@ -14,7 +14,8 @@ const loadPhotoReducer = (state=initialState, action) => {
           likes: res.likes,
           liked_by_user: res.liked_by_user,
           urls: {
-            small: res.urls.small
+            small: res.urls.small,
+            full: res.urls.full
           },
           user: {
             name: res.user.first_name,
@@ -29,8 +30,6 @@ const loadPhotoReducer = (state=initialState, action) => {
       }
 
       case LIKE_PHOTO:
-        console.log('like action', action.data);
-          console.log('like state', state);
           return {
             ...state,
             photos: state.photos.map(
@@ -45,8 +44,6 @@ const loadPhotoReducer = (state=initialState, action) => {
           }
 
         case DISLIKE_PHOTO:
-          console.log('dislike action', action.data.photo.id);
-          console.log('dislike state', state);
           return {
             ...state,
             photos: state.photos.map(

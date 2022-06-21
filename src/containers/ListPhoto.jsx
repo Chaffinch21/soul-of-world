@@ -3,10 +3,7 @@ import { useEffect, useState } from "react";
 import PhotoItem from '../component/PhotoItem';
 import {loadPhotoReducer} from '../reducers/loadPhotoReducer';
 import { useDispatch, useSelector } from "react-redux";
-// import { getPhotos } from "../unsplash";
 import {loadPhotosAction} from '../actions'
-// localStorage.setItem('start', 0);
-// localStorage.setItem('end', 5);
 let start = 1; 
 const ListPhoto = () => { 
   const dispatch = useDispatch();

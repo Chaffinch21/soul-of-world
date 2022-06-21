@@ -28,12 +28,21 @@ const PhotoItem = (data, key) => {
             <a href={data.data.user.link} target="_blank" className="card-link">
               {data.data.user.name}
             </a>
-            <button className="btn card-reiting" onClick={()=>likeToggle(data.data.id)}>
-            {data.data.likes}
-            </button>
+            {data.data.liked_by_user == true &&
+              <button className="btn card-reiting like" onClick={()=>likeToggle(data.data.id)}>
+              {data.data.likes}
+              </button>
+            }
+
+            {data.data.liked_by_user == false &&
+              <button className="btn card-reiting" onClick={()=>likeToggle(data.data.id)}>
+              {data.data.likes}
+              </button>
+            }
+            
           </div> 
           <p className="card-date">{data.data.date}</p>
-          <Link to="/photo" className="card-link">Посмотреть</Link>
+          <Link to="/photo" state={{id: data.data.id}} className="card-link">Посмотреть</Link>
         </div>
     </li>
   )

@@ -20,7 +20,7 @@ export const likeAction = (id) => {
   return async dispatch => {
     const response = await unsplash.photos.likePhoto(id);
     const jsonData = await response.json();
-    console.log('part2', jsonData);
+    console.log('action like', jsonData);
     dispatch({
       type: LIKE_PHOTO,
       data: jsonData
@@ -32,7 +32,7 @@ export const dislikeAction = (id) => {
   return async dispatch => {
     const response = await unsplash.photos.unlikePhoto(id);
     const jsonData = await response.json();
-    console.log('part2', jsonData);
+    console.log('action dislike', jsonData);
     dispatch({
       type: DISLIKE_PHOTO,
       data: jsonData
