@@ -137,15 +137,39 @@ body {
   justify-content: space-between;
 }
 
+.btn {
+  border: none;
+  background: none;
+  cursor:pointer;
+}
+
 .card-reiting {
   padding-left: 25px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   color: var(--color-text);
-  background-image: url('./img/like-color.png');
+  background-image: url('./img/like.png');
   background-repeat: no-repeat;
   background-position: left center;
   background-size: 20px 20px;
+  transition: background-image .3s ease-in-out;
+}
+
+.card-reiting.like {
+  background-image: url('./img/like-color.png');
+  transition: background-image .3s ease-in-out;
+}
+
+.card-reiting.like:hover {
+  background-image: url('./img/like.png');
+}
+
+.card-reiting:hover {
+  background-image: url('./img/like-color.png');
+}
+
+.card-reiting:focus {
+  outline: none;
 }
 
 .card-date {

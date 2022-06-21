@@ -1,13 +1,14 @@
+import { clear } from '@testing-library/user-event/dist/clear';
 import React from 'react';
 import Unsplash from 'unsplash-js';
+import {toJson} from 'unsplash-js';
 
 Unsplash = require('unsplash-js').default;
 
 export const unsplash = new Unsplash({
   accessKey: 'DvahNraSvUX3Y59qexjWLHircaoLrJ_6uArWOhABpHY',
   secret: '6v4pp6-DSsAvUfcPuoz4pNbaW11QfZV6iycqQJHgOmE',
-  callbackUrl: 'http://localhost:3000/auth'
-
+  callbackUrl: 'http://localhost:3000/auth',
 })
 
 export const authenticationUnsplash = () => {
@@ -22,10 +23,10 @@ export const authenticationUnsplash = () => {
 export const getToken = () => {
   const code=window.location.search.split('code=')[1];
 unsplash.auth.userAuthentication(code)
-  .then(res => res.text())
-  .then(res => {
-    localStorage.setItem('tocken', code);
-    unsplash.auth.setBearerToken(JSON.parse(res).access_token);
+.then(toJson)
+.then(json => {
+  console.log(json.access_token);
+  unsplash.auth.setBearerToken(json.access_token);
     });
 }
 
