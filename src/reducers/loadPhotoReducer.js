@@ -21,7 +21,8 @@ const loadPhotoReducer = (state=initialState, action) => {
             name: res.user.first_name,
             link: res.user.links.html
           },
-          date: res.created_at
+          date: res.created_at,
+          description: res.description,
         }
       })
       return {

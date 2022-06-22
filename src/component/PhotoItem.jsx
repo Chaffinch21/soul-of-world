@@ -23,7 +23,7 @@ const PhotoItem = (data, key) => {
   return(
     <li className="photos-item">
         <div className="photo-card card">
-          <img src={data.data.urls.small}/>
+          <img src={data.data.urls.small} alt={data.data.description}/>
           <div className="card-wrap">
             <a href={data.data.user.link} target="_blank" className="card-link">
               {data.data.user.name}

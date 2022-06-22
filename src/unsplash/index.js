@@ -25,7 +25,6 @@ export const getToken = () => {
 unsplash.auth.userAuthentication(code)
 .then(toJson)
 .then(json => {
-  console.log(json.access_token);
   unsplash.auth.setBearerToken(json.access_token);
     });
 }

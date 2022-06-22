@@ -5,7 +5,6 @@ import Header from '../component/header';
 import Gl from '../containers/Gl';
 import Authorization from '../containers/Authorization';
 import Photo from '../containers/Photo';
-
 const Page = () => {
 
   return(

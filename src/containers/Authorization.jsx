@@ -3,10 +3,16 @@ import ListPhoto from './ListPhoto';
 import { getToken } from '../unsplash';
 
   const Authorization = () => {
-    getToken();
+    const saveMe=()=>{
+        getToken();
+    }
+    
         return (
-            <div className="container container-Gl">
-                <h1 className="title-Gl welcome">Добро пожаловать!</h1>
+            <div className="container container-Gl scroll-unload">
+                {/* <h1 className="title-Gl welcome">Добро пожаловать!</h1> */}
+                <button className='saveMe-btn' onClick={saveMe}>
+                    Запомнить меня
+                </button>
                 <ListPhoto />
             </div>
         )
