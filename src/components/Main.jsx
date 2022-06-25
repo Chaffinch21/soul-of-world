@@ -6,7 +6,7 @@ import Authorization from "../components/Authorization";
 import Photo from "../components/Photo";
 import Photos from "../components/Photos";
 
-const Page = () => {
+const Main = () => {
   return (
     <BrowserRouter>
       <Header />
@@ -22,4 +22,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default Main;
