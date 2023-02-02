@@ -1,5 +1,4 @@
-# The Soul of the World
-
+#The Soul of the World
 SPA приложение для просмотра фотографий на основе unsplash-js
 
 ## Возможности приложения
